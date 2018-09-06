@@ -5,11 +5,12 @@ import collections
 import random
 import time
 import numpy as np
+import os
+import logging
 import tensorflow as tf
 from tensorflow.core.protobuf import saver_pb2
 import tensorflow.contrib.layers as layers
-import os
-import logging
+
 
 #read input data and write to dict
 def read_input_feature(fileList, feature_path, weight_path):
@@ -37,7 +38,6 @@ def getBatch(data, bs, idx):
 def cos_sim(a, b):
     normalize_a = tf.nn.l2_normalize(a,1)        
     normalize_b = tf.nn.l2_normalize(b,1) 
-    mul = tf.multiply(normalize_a, normalize_b)
     cos_similarity=tf.reduce_sum(tf.multiply(normalize_a,normalize_b), axis=1)
     return cos_similarity
 
