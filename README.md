@@ -1,7 +1,5 @@
 TensorFlow implementation of Representation Learning with crowdsourced Labels.  
 
-Dependency:
+Dependency:  
 Python3 
 TensorFlow
-Numpy
-Pandas
